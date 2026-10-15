@@ -32,7 +32,7 @@
 <p class="meta">
   앱: 톡톡! 부스러기 (<code>com.mallang.crumbpop</code>)<br>
   개발자: 말랑컴퍼니<br>
-  시행일: 2026년 8월 23일 · 개정일: 2026년 9월 20일
+  시행일·개정일: 2026년 10월 16일
 </p>
 <p><a href="#english" lang="en">English privacy policy</a> · <a href="#data-deletion">데이터 삭제 요청 / Data deletion</a></p>
 
@@ -44,11 +44,11 @@
 <h2>1. 기기에 저장되는 정보와 서비스 이용</h2>
 <p>
   게임 진행도, 도감 기록, 아이템 보유 수, 음량·언어·진동 설정과 구매 권한 확인을 위한 영수증 또는 서명된 거래 정보 사본은
-  이용자의 기기에 저장됩니다. 개발자는 별도의 게임·결제 서버를 운영하지 않습니다.
+  이용자의 기기에 저장됩니다. 무한모드에서는 개발자가 Firebase 기반 계정·게임 기록·순위·결제 검증 서버를 운영합니다(<a href="#native-infinite">제3-4조</a>).
   진행도 연동을 지원하는 버전에서는 제3-3조에 따라 게임 저장 데이터가 Google 또는 Apple의 플랫폼 클라우드로 전송됩니다.
   게임 이용 이벤트 및 광고·결제 관련 정보는 아래의 Google 및 Unity 서비스로 별도 전송됩니다. 문의를 보내시면 회신과 요청 처리를 위해 이메일과 문의 내용을 처리합니다.
 </p>
-<p>본 앱은 별도의 CrumbPop 아이디·비밀번호 계정을 만들거나 이름·이메일·전화번호의 직접 입력을 요구하지 않습니다. 진행도 연동을 지원하는 버전에서는 기존 플랫폼 게임 계정에 연결할 수 있습니다(<a href="#cloud-save">제3-3조</a>). 인앱 구매는 이용 중인 플랫폼에 따라 Google Play 또는 Apple App Store 계정을 통해 이루어집니다. iOS/iPadOS의 구매 권한을 오프라인에서도 확인하기 위해 해당 기기의 보안 저장소(Keychain)에도 확인된 거래 정보 사본을 보관합니다. 자세한 내용은 제3-1조와 제5조를 참고해 주세요.</p>
+<p>본 앱은 CrumbPop 아이디·비밀번호를 별도로 입력받지 않습니다. 무한모드에 명시적으로 입장하면 플랫폼 게임 계정을 확인하여 네이티브 무한모드 서비스 계정을 만들거나 연결하고, 순위에 표시할 닉네임을 입력받습니다. 이름·이메일·전화번호의 직접 입력을 요구하지 않습니다. 진행도 연동을 지원하는 버전에서는 기존 플랫폼 게임 계정에 연결할 수 있습니다(<a href="#cloud-save">제3-3조</a>). 인앱 구매는 이용 중인 플랫폼에 따라 Google Play 또는 Apple App Store 계정을 통해 이루어집니다. iOS/iPadOS의 구매 권한을 오프라인에서도 확인하기 위해 해당 기기의 보안 저장소(Keychain)에도 확인된 거래 정보 사본을 보관합니다. 자세한 내용은 제3-1조와 제5조를 참고해 주세요.</p>
 
 <h2>2. 광고를 위해 제3자가 수집하는 정보</h2>
 <p>
@@ -66,7 +66,7 @@
 </table>
 <p>
   이 정보는 Google 광고 서비스를 통해 처리되며, 개발자는 AdMob에서 제공하는 집계 통계(노출 수, 수익 등)를 확인합니다.
-  일회성 상품을 구매하면 하단 배너 광고가 제거됩니다. 이용자가 선택하는 보상형 광고는 계속 제공되므로,
+  배너 제거·오프라인 플레이 상품을 구매하면 하단 배너 광고가 제거됩니다. 무한모드 추가 입장 구매는 광고를 제거하지 않습니다. 이용자가 선택하는 보상형 광고는 계속 제공되므로,
   구매가 모든 광고 처리나 분석 SDK의 데이터 전송을 중단하는 것은 아닙니다.
 </p>
 <p>
@@ -126,13 +126,14 @@
 <p>앱은 만 14세 미만 아동을 대상으로 하지 않으며, 만 14세 미만 아동의 개인정보를 알면서 수집하지 않습니다. 만 14세 미만 아동의 정보가 수집된 사실을 알게 되면 지체 없이 삭제합니다.</p>
 <h2 id="purchases">3-1. 구매 및 구매 복원 (Google Play · Apple App Store · Unity IAP)</h2>
 <p>일회성 상품인 배너 제거 + 오프라인 플레이는 플랫폼에 따라 Google Play 또는 Apple App Store 결제로 구매합니다. 앱은 Unity In-App Purchasing(Unity IAP)을 통해 상품 ID, 구매 상태, 거래 식별자, 영수증·서명 또는 서명된 거래 정보를 처리하여 상품 소유권과 구매 복원을 확인합니다. 앱과 개발자는 카드 번호, 은행 계좌번호 또는 Google·Apple 계정 비밀번호를 직접 받거나 저장하지 않습니다. 이 상품은 선택형 보상 광고를 제거하지 않습니다.</p>
-<p><strong>Android:</strong> 앱은 Google Play 영수증을 기기에서 검증하고, 구매 복원 및 오프라인 권한 확인을 위한 영수증 사본을 기기에 저장합니다.</p>
-<p><strong>iOS/iPadOS:</strong> 앱은 Apple StoreKit이 검증한 현재 상품 소유권과 상품·거래 식별자를 확인한 후 권한을 부여합니다. 확인된 서명 거래 정보 사본을 해당 기기의 Keychain과 앱 저장소에 보관하여 오프라인 권한 확인에 사용합니다. Keychain 항목은 다른 기기로 동기화하지 않으며, 앱 저장소의 사본만으로는 구매 권한을 부여하지 않습니다. 구매 복원 버튼을 선택하면 Apple의 거래 동기화를 요청하며 Apple 계정 확인이 필요할 수 있습니다.</p>
+<p><strong>Android의 배너 제거·오프라인 플레이 권리:</strong> 앱은 Google Play 영수증을 기기에서 검증하고, 구매 복원 및 오프라인 권한 확인을 위한 영수증 사본을 기기에 저장합니다.</p>
+<p><strong>iOS/iPadOS의 배너 제거·오프라인 플레이 권리:</strong> 앱은 Apple StoreKit이 검증한 현재 상품 소유권과 상품·거래 식별자를 확인한 후 권한을 부여합니다. 확인된 서명 거래 정보 사본을 해당 기기의 Keychain과 앱 저장소에 보관하여 오프라인 권한 확인에 사용합니다. Keychain 항목은 다른 기기로 동기화하지 않으며, 앱 저장소의 사본만으로는 구매 권한을 부여하지 않습니다. 구매 복원 버튼을 선택하면 Apple의 거래 동기화를 요청하며 Apple 계정 확인이 필요할 수 있습니다.</p>
 <p>Google Play 또는 Apple은 결제와 구매 내역 조회를 처리합니다. Unity IAP SDK는 별도로 구매 시도·성공·실패·처리 완료 이벤트, 상품·거래 ID, 이용 가능한 영수증 원문·서명·서명된 거래 정보, 오류 사유·메시지, 시각 정보, 앱 버전과 기기 정보 및 사용 가능한 설치·세션 식별자를 Unity 서비스로 전송합니다. 이는 구매 기능 제공·운영 및 구매 서비스 분석에 이용됩니다. 연결은 암호화됩니다. 기기에서 구매 권한을 검증하거나 Keychain을 사용한다는 것은 SDK의 별도 전송이 없다는 뜻이 아닙니다. Firebase의 구매 이벤트 처리는 제3조의 분석 설명을 따릅니다.</p>
 <p>구매는 선택 사항이지만, 앱은 실행 시 기존 구매를 자동으로 조회하며 구매 처리와 별도로 구매 SDK 전송만 끄는 설정은 제공하지 않습니다. iOS/iPadOS의 Apple 계정 확인을 수반하는 명시적 거래 동기화는 구매 복원 버튼으로 요청합니다. 재설치·기기 변경·앱 데이터 삭제 후에는 온라인 상태에서 같은 Google Play 또는 Apple 계정으로 소유권을 다시 확인해야 할 수 있습니다.</p>
 <p>Google·Apple·Unity는 각 서비스 정책 및 해당 처리 역할에 따라 정보를 처리하며, 해외 서버에서 처리할 수 있습니다. Unity는 처리 목적에 따라 개발자의 수탁자 또는 독립적인 개인정보 처리자로 활동할 수 있습니다. Google Play와 Apple의 주문·거래 기록 및 Unity의 처리 기록은 앱의 로컬 저장 데이터와 별개입니다. 보관 기간과 삭제 방법은 제5조와 <a href="#data-deletion">제7조</a>를 참고해 주세요.</p>
 <p><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a> · <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 개인정보처리방침</a> · <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">Unity 개인정보처리방침</a> · <a href="https://docs.unity.com/en-us/iap/privacy-and-consent/overview" target="_blank" rel="noopener">Unity IAP 개인정보 처리 안내</a></p>
 
+<p>무한모드의 소모성 추가 입장 구매는 제3-4조의 계정·입장 연결과 서버 검증을 따르며, 위 프리미엄 구매 권리와 구분됩니다.</p>
 <h2>3-2. 인터넷 연결 확인</h2>
 <p>오프라인 플레이 권한이 확인되지 않은 경우 앱 접속 및 스테이지 시작 시 Google의 HTTPS 연결 확인 서비스에 요청을 보냅니다. 연결 확인 과정에서 IP 주소 등 통신에 필요한 정보가 서비스에 전달됩니다. 이 요청에 게임 저장 파일, 영수증 또는 계정 정보를 첨부하지 않습니다.</p>
 
@@ -140,9 +141,31 @@
 <p>이 기능의 제공 여부는 앱 버전과 플랫폼 설정에 따라 다릅니다. 지원 버전은 Android에서 Google Play 게임즈의 저장된 게임, iOS/iPadOS에서 Game Center와 iCloud를 사용합니다. 플랫폼 계정이 이미 로그인되어 있고 서비스를 사용할 수 있으면 앱 실행 시 자동으로 연결과 백업을 시도합니다. 연결이 필요한 경우 앱 설정의 계정 연결에서 플랫폼 로그인 절차를 시작할 수 있습니다. 앱에는 현재 클라우드 연동을 끄거나 계정 연결을 해제하는 별도 스위치가 없습니다. 플랫폼 계정 연결이 되지 않아도 기기에 진행도를 저장하며, 기존 게임 이용 조건은 그대로 적용됩니다.</p>
 <p>연동되는 게임 저장 데이터는 클리어 진행도, 도감 획득 수·확인 기록, 아이템 보유 수, 룰렛과 지급 대기 보상 상태, 보상 중복 지급 방지 기록 및 처음 제공되는 보상 이용 횟수입니다. 저장 시각과 저장본을 구분하는 식별 정보도 함께 전송합니다. 게임 기록의 백업, 재설치 후 복원, 같은 플랫폼의 같은 계정으로 다른 기기에서 이어 하기에 사용합니다. Android와 iOS 사이의 기록 이전은 지원하지 않습니다. iOS/iPadOS에서는 Game Center와 iCloud Drive를 사용할 수 있어야 하며, 네트워크·서비스 상태에 따라 동기화가 지연되거나 실패할 수 있습니다.</p>
 <p>앱은 플랫폼에서 제공하는 플레이어 식별자와 프로필 표시 이름으로 계정을 구분하고 연결 상태를 표시합니다. iOS/iPadOS에서는 플레이어 식별자에서 만든 해시값을 클라우드 저장 이름에도 사용하여 계정별 기록을 구분합니다. 이 값은 계정에 연결되는 식별자이며 익명 정보로 취급하지 않습니다. 앱에 플랫폼 계정 비밀번호나 인증 코드를 직접 제공할 필요는 없습니다.</p>
-<p>개발자는 별도 게임 저장 서버를 운영하지 않습니다. 게임 저장 데이터는 해당 플랫폼의 Google 또는 Apple 서비스로 전송됩니다. 이 저장 데이터에는 결제 영수증·구매 권한, Firebase 통계 기록, 음량·언어·진동 설정을 포함하지 않습니다. 플랫폼 로그인·저장 서비스는 기능 제공과 계정 관리 등을 위해 정보를 처리하며, Google Play 게임즈 SDK는 플레이어 정보와 서비스 이용·진단 정보도 처리합니다. 서비스 제공자는 각 정책과 계정 설정에 따라 국내외 인프라에서 처리할 수 있습니다. 이는 광고·분석·구매 서비스의 별도 데이터 처리를 중단한다는 뜻이 아닙니다.</p>
+<p>이 항의 일반 스테이지 진행도 저장은 해당 플랫폼의 Google 또는 Apple 서비스로 전송됩니다. 무한모드 계정·진행도·순위는 별도의 Firebase 서버에서 처리하며 제3-4조를 따릅니다. 이 저장 데이터에는 결제 영수증·구매 권한, Firebase 통계 기록, 음량·언어·진동 설정을 포함하지 않습니다. 플랫폼 로그인·저장 서비스는 기능 제공과 계정 관리 등을 위해 정보를 처리하며, Google Play 게임즈 SDK는 플레이어 정보와 서비스 이용·진단 정보도 처리합니다. 서비스 제공자는 각 정책과 계정 설정에 따라 국내외 인프라에서 처리할 수 있습니다. 이는 광고·분석·구매 서비스의 별도 데이터 처리를 중단한다는 뜻이 아닙니다.</p>
 <p><a href="https://developer.android.com/games/pgs/data-collection" target="_blank" rel="noopener">Google Play 게임즈 데이터 처리 안내</a> · <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a> · <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 개인정보처리방침</a> · <a href="https://support.apple.com/guide/icloud/mm62d92d6b3e/icloud" target="_blank" rel="noopener">iCloud 앱 데이터 안내</a></p>
-<p>계정 로그인 및 앱별 iCloud 사용 여부는 플랫폼 설정에서 관리할 수 있습니다. 로그아웃이나 동기화 중지는 이미 저장된 클라우드 기록을 지우지 않습니다. 앱에는 현재 클라우드 기록 전용 삭제 버튼이 없으며, 플랫폼별 관리·삭제 방법은 <a href="#data-deletion">제7조</a>를 참고해 주세요.</p>
+<p>계정 로그인 및 앱별 iCloud 사용 여부는 플랫폼 설정에서 관리할 수 있습니다. 로그아웃이나 동기화 중지는 이미 저장된 클라우드 기록을 지우지 않습니다. 일반 스테이지의 플랫폼 클라우드 기록을 지우는 앱 내 전용 버튼은 없으며, 플랫폼별 관리·삭제 방법은 <a href="#data-deletion">제7조</a>를 참고해 주세요.</p>
+
+
+<h2 id="native-infinite">3-4. 네이티브 무한모드 계정·기록·순위·결제 검증</h2>
+<p>Android 및 iOS/iPadOS의 무한모드는 Google Play 게임즈 또는 Game Center가 확인한 플레이어 식별자로 Firebase 서비스 계정을 연결합니다. 무한모드 최초 입장 또는 삭제 후 재입장은 이용자의 명시적 선택으로 이루어집니다. 이미 연결된 계정은 이후 자동으로 접속을 복원할 수 있지만, 앱 시작만으로 삭제한 무한모드 계정을 다시 만들지는 않습니다. Android와 iOS 계정은 서로 구분하며, 네이티브 무한모드 순위는 Android 및 iOS 이용자가 함께 참여하는 별도 순위입니다. 토스 버전의 계정·현금성 포인트·기록과 연결하지 않습니다.</p>
+<table>
+<tr><th>처리 정보</th><th>목적</th></tr>
+<tr><td>확인된 플랫폼 플레이어 식별자에서 만든 계정 식별자, 무작위 세션 세대 식별자, 닉네임</td><td>본인 확인, 기기 변경 후 연결, 계정 구분, 순위 표시와 부정 이용 방지</td></tr>
+<tr><td>무한모드 점수·플레이 기록·진행 중 상태, 강화 단계·게임 내부 포인트, 일일 입장 횟수, 시즌 순위·보상 및 중복 지급 방지 기록</td><td>진행도 저장, 게임 규칙 적용, 순위·보상 제공과 중복 지급 방지</td></tr>
+<tr><td>상품 ID, 거래 식별자 또는 영수증 지문, 구매 상태·시각·계정/입장 연결 정보</td><td>유료 추가 입장 검증, 결제 복구와 동일 구매의 재사용 방지</td></tr>
+<tr><td>접속·보안 정보와 오류 코드, 인증 재사용 방지 지문, 짧게 보관하는 IP 기반 요청 제한 지문</td><td>서비스 안정성, 인증 재사용 및 과도한 요청 방지</td></tr>
+</table>
+<p>닉네임과 순위 점수는 무한모드 순위 화면에서 다른 이용자에게 표시됩니다. 계정 식별자와 영수증 지문은 원래 값에 연결될 수 있는 기술 정보이며, 완전히 익명인 정보라고 취급하지 않습니다. 플랫폼 인증 증명과 결제 토큰·서명 거래는 암호화된 통신으로 서버에 보내 Google 또는 Apple의 공식 서비스에서 검증합니다. 서버는 이 원문이나 비밀번호·보안 비밀값을 게임 저장 문서 또는 앱 자체 오류 로그에 기록하지 않습니다. 기기의 미완료 결제 복구 정보와 Google·Apple·Unity의 별도 처리에는 제3-1조가 적용됩니다.</p>
+<p>무한모드에는 선택형 보상 광고 입장과 소모성 추가 입장 상품이 있습니다. 추가 입장은 검증된 구매 1건을 해당 계정의 예약된 입장 1건에 연결하여 지급합니다. 구매 완료가 확인되지 않은 거래를 임의로 지급하거나 중복 지급하지 않습니다. 무한모드 내부 강화 포인트는 현금성 토스 포인트가 아닙니다.</p>
+<p>이 기능의 처리를 Google LLC에 위탁합니다. Firestore 게임 데이터와 서버 함수의 설정 지역은 대한민국 서울(<code>asia-northeast3</code>)이며, Firebase Authentication은 미국에서 처리됩니다. 서비스 접속·운영 정보는 Google의 글로벌 인프라에서도 처리될 수 있습니다. 전송은 무한모드 인증·플레이·구매·삭제 요청 시 TLS로 이루어집니다. Google의 연락처·정책은 제3조 및 <a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener">Firebase 개인정보 보호 및 보안 안내</a>를 참고해 주세요. 무한모드를 선택하지 않으면 이 기능을 위한 서비스 계정을 새로 만들지 않으며, 이미 생성된 계정은 제7조에 따라 삭제할 수 있습니다.</p>
+<h3>보관 및 삭제</h3>
+<ul>
+<li>무한모드 계정·게임 기록·닉네임·순위는 서비스 제공에 필요한 동안 보관하며, 본인 확인된 계정 삭제 요청으로 제거합니다. 정상 처리에서는 앱이 삭제 완료 응답을 받기 전에 활성 데이터와 Firebase 사용자 삭제를 실행합니다. 요청이 이미 처리 중이면 접수 응답 후 시간별 정리 작업이 이어서 처리합니다. 네트워크·서비스 장애나 처리량에 따라 완료가 늦어질 수 있으며, 접수를 즉시 완전 삭제와 동일하게 안내하지 않습니다.</li>
+<li>삭제된 계정의 구매 재사용 방지를 위해 계정 ID·닉네임·런 ID·거래 원문을 제거한 영수증 지문, 플랫폼, 상품 ID 및 지급 여부만 삭제 시점부터 365일간 보관한 뒤 다음 정리 작업에서 제거합니다. 이 정보로 새 입장이나 점수를 복원하지 않습니다.</li>
+<li>삭제 이전 토큰으로 계정이 자동 재생성되는 것을 막기 위한 삭제 세대 표식의 만료 시점은 삭제 후 2시간이며, 이후 시간별 정리 작업에서 제거합니다. 인증 재사용 및 요청 제한 지문은 생성 후 10분에 만료되고 다음 정리 작업에서 제거합니다. 만료 시점과 실제 정리 완료 시점은 다를 수 있습니다.</li>
+<li>현재 Firestore의 시점 복구(PITR)와 예약 백업은 꺼져 있고 설정된 별도 Firestore 백업 사본은 없습니다. Firestore의 기본 버전 보존 기간은 1시간입니다. 운영 로그의 현재 보존 기간은 30일이며, Google Cloud의 필수 관리·보안 감사 로그는 400일입니다. 오류 로그에 거래 원문이나 인증 비밀값을 남기지 않더라도 서비스 제공자가 처리하는 접속·보안 로그는 별도로 존재할 수 있습니다.</li>
+<li>Firebase Authentication의 IP 로그는 Google 정책에 따라 수 주 보관됩니다. Google은 사용자 삭제 요청 이후 인증 정보를 운영·백업 시스템에서 제거하는 데 최대 180일이 걸릴 수 있다고 안내합니다. 이는 당사 활성 게임 프로필 삭제와 구분되며, 모든 공급자 사본이 즉시 없어짐을 뜻하지 않습니다.</li>
+</ul>
 
 <h2>4. 이용자의 선택권</h2>
 <p>맞춤 광고를 원하지 않으시면 기기 설정에서 직접 제어하실 수 있습니다.</p>
@@ -176,12 +199,18 @@
 </p>
 
 <h2 id="data-deletion">7. 데이터 삭제 요청 · 권리 행사 및 문의</h2>
-<p>톡톡! 부스러기(CrumbPop, 개발자 말랑컴퍼니)는 별도의 CrumbPop 아이디·비밀번호 계정을 만들지 않습니다. 지원 버전은 기존 플랫폼 게임 계정을 사용합니다. 별도 계정 생성 없이도 게임 저장 데이터, Firebase 이용 통계, 구매 관련 데이터 및 문의 내역의 열람·정정·삭제·처리정지를 문의할 수 있습니다. <a href="#data-deletion-en" lang="en">English deletion instructions</a></p>
+<h3>앱에서 무한모드 데이터 삭제</h3>
+<p><strong>무한모드 로비 → 데이터 삭제 → 삭제 범위 확인 → 확인</strong> 순서로 요청할 수 있습니다. 현재 플랫폼 계정의 새로운 인증 증명으로 본인 여부를 확인합니다. 삭제되는 정보는 네이티브 무한모드 계정, 진행 중인 무한모드, 강화·내부 포인트, 기록·순위·닉네임 및 관련 Firebase 사용자입니다. 일반 스테이지 진행도, PGS/iCloud 저장, 배너 제거·오프라인 플레이 구매 권리와 Google·Apple 계정 자체는 삭제하지 않습니다. 토스 데이터에도 영향을 주지 않습니다.</p>
+<p>진행 중이거나 검증·지급이 끝나지 않은 결제는 먼저 처리해야 합니다. 확정 취소된 미결제 예약은 정리한 후 삭제를 다시 요청할 수 있습니다. 데이터 삭제는 환불 요청이 아니며 사용 중인 무한모드와 기록을 복구하지 않습니다. 완료 또는 처리 접수 후 로비를 닫고 무한모드 연결 정보를 정리합니다. 나중에 무한모드에 명시적으로 다시 입장하면 빈 새 기록을 만들 수 있습니다. 제3-4조의 최소 보관 정보와 공급자 보존 기간은 별도로 적용됩니다.</p>
+<h3>앱을 다시 설치하지 않고 웹에서 요청하기</h3>
+<p>아래 이메일로 앱 설치나 새 계정 생성 없이 삭제 요청을 접수할 수 있습니다. 무한모드 요청임을 밝히고 플랫폼, 닉네임 및 대략적인 이용 시기를 알려 주세요. 이는 기록을 찾기 위한 정보이며 <strong>닉네임 또는 공개된 계정 식별자만으로 타인의 계정을 삭제하지 않습니다.</strong> 안전한 추가 본인 확인이 필요하면 절차와 필요한 최소 정보를 안내합니다. 결제 내역을 확인 자료로 제공하는 경우에도 관련 없는 정보는 가려 주세요. 인증 코드·비밀번호·결제 토큰·서명 거래 원문은 이메일로 보내지 마세요.</p>
+
+<p>톡톡! 부스러기(CrumbPop, 개발자 말랑컴퍼니)는 별도의 아이디·비밀번호 입력 없이 플랫폼 게임 계정을 사용합니다. 무한모드에는 제3-4조의 Firebase 서비스 계정이 만들어집니다. 별도 계정 생성 없이도 게임 저장 데이터, Firebase 이용 통계, 구매 관련 데이터 및 문의 내역의 열람·정정·삭제·처리정지를 문의할 수 있습니다. <a href="#data-deletion-en" lang="en">English deletion instructions</a></p>
 <p>
   <strong>이메일:</strong> <a href="mailto:alsk1597@gmail.com">alsk1597@gmail.com</a>
 </p>
 <ol>
-<li>이메일 제목에 “CrumbPop 데이터 삭제 요청”을 쓰고, 삭제를 원하는 정보(플랫폼 게임 저장 기록, Firebase 통계, 구매 관련 기록 또는 문의 내역)를 알려 주세요.</li>
+<li>이메일 제목에 “CrumbPop 데이터 삭제 요청”을 쓰고, 삭제를 원하는 정보(무한모드 계정·기록, 플랫폼 게임 저장 기록, Firebase 통계, 구매 관련 기록 또는 문의 내역)를 알려 주세요.</li>
 <li>앱 이름과 이용 플랫폼(Android 또는 iOS/iPadOS)·사용 기기·대략적인 이용 시기를 적어 주세요. 구매 관련 요청에는 확인 가능한 Google Play 주문 ID 또는 Apple 거래 식별자와 구매 시기를 선택적으로 첨부할 수 있습니다. 기기별 Firebase 기록을 찾는 데 추가 식별 정보가 필요하면 확인 가능한 정보의 범위를 함께 검토합니다. 앱에는 현재 통계 식별자를 표시하는 기능이 없으므로 특정 설치의 기록을 확인하지 못할 수 있으며, 이 경우 확인된 제한과 가능한 후속 절차를 안내합니다.</li>
 <li>요청 처리에 필요한 최소 정보만 확인합니다. <strong>카드 번호, 은행 계좌번호, Google·Apple 계정 비밀번호나 인증 코드를 보내지 마세요.</strong> 영수증을 첨부할 때도 요청과 무관한 개인정보는 가려 주세요.</li>
 </ol>
@@ -210,17 +239,17 @@
 
 <section lang="en" id="english">
 <h1>Privacy policy — CrumbPop</h1>
-<p class="meta">App: CrumbPop (톡톡! 부스러기), <code>com.mallang.crumbpop</code><br>Developer: Mallang Company (말랑컴퍼니)<br>Effective: August 23, 2026 · Revised: September 20, 2026</p>
+<p class="meta">App: CrumbPop (톡톡! 부스러기), <code>com.mallang.crumbpop</code><br>Developer: Mallang Company (말랑컴퍼니)<br>Effective and revised: October 16, 2026</p>
 <p>This policy covers the Android and iOS/iPadOS versions of CrumbPop and explains how the app processes information when you play, view ads, make purchases or contact us.</p>
 
 <h2>1. Information stored on your device</h2>
-<p>Game progress, collection entries, item quantities, sound/language/vibration preferences and a purchase receipt or signed-transaction copy are stored on your device. We do not operate a separate game or payment server. In versions that support progress synchronization, game-save data is also sent to Google's or Apple's platform cloud as described in Section 3-3. Gameplay events and advertising/purchase information are sent separately to the Google and Unity services described below. If you contact us, we process your email and message to respond to the request.</p>
-<p>The app does not create a separate CrumbPop username/password account or require you to enter a name, email address or phone number. Versions that support progress synchronization can connect to an existing platform game account (<a href="#cloud-save-en">Section 3-3</a>). In-app purchases use your Google Play account or Apple Account, depending on the platform. On iOS/iPadOS, a copy of confirmed transaction information is also stored in the device's secure Keychain for offline entitlement checks. Sections 3-1 and 5 explain this storage.</p>
+<p>Game progress, collection entries, item quantities, sound/language/vibration preferences and a purchase receipt or signed-transaction copy are stored on your device. For infinite mode, we operate a Firebase-backed service for native accounts, game records, rankings and purchase verification (<a href="#native-infinite-en">Section 3-4</a>). In versions that support progress synchronization, game-save data is also sent to Google's or Apple's platform cloud as described in Section 3-3. Gameplay events and advertising/purchase information are sent separately to the Google and Unity services described below. If you contact us, we process your email and message to respond to the request.</p>
+<p>The app does not ask you to enter a separate CrumbPop username or password. Explicitly entering infinite mode creates or connects a native service account after platform identity verification, and asks for a leaderboard nickname. We do not require your real name, email address or phone number. Versions that support progress synchronization can connect to an existing platform game account (<a href="#cloud-save-en">Section 3-3</a>). In-app purchases use your Google Play account or Apple Account, depending on the platform. On iOS/iPadOS, a copy of confirmed transaction information is also stored in the device's secure Keychain for offline entitlement checks. Sections 3-1 and 5 explain this storage.</p>
 
 <h2>2. Advertising — Google AdMob</h2>
 <p>AdMob collects and shares advertising/device identifiers, IP-based general location, interactions with the app and ads, and technical diagnostics for advertising, analytics and fraud prevention. Diagnostics may include user-associated performance data such as startup time, hangs and energy use, and non-user-related iOS SDK crash logs. Device/app information helps deliver suitable ads. Actual processing can vary with consent and device settings. We receive the aggregate reporting provided by AdMob.</p>
 <p>Identifiers may include the Android advertising ID and app set ID, available device- or app-scoped identifiers on iOS/iPadOS, and the iOS advertising identifier (IDFA) when permission is granted.</p>
-<p>The one-time purchase removes the bottom banner. Optional rewarded ads remain available. Buying this product does not turn off every advertising or analytics data flow.</p>
+<p>The banner-removal and offline-play product removes the bottom banner. An infinite-mode additional-entry purchase does not remove ads. Optional rewarded ads remain available. Buying this product does not turn off every advertising or analytics data flow.</p>
 <p>See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob policies</a>, <a href="https://developers.google.com/admob/unity/privacy/play-data-disclosure" target="_blank" rel="noopener">Mobile Ads Android data disclosure</a> and <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" target="_blank" rel="noopener">Mobile Ads iOS data disclosure</a>.</p>
 <p>On iOS/iPadOS, the app requests permission before IDFA access and tracking that require Apple's authorization. That IDFA access and tracking do not occur without permission. Denying tracking alone does not block gameplay or change your eligibility for rewards. Rewards still depend on their normal conditions, such as completing an optional rewarded ad; ad availability can depend on regional consent, connectivity and ad inventory. Denying tracking does not necessarily stop all ads or every form of advertising and analytics processing.</p>
 
@@ -237,12 +266,13 @@
 
 <h2>3-1. Purchases and restoration — Google Play, Apple App Store and Unity IAP</h2>
 <p>The one-time banner-removal and offline-play product uses Google Play or Apple App Store billing, depending on the platform, through Unity In-App Purchasing (Unity IAP). The app handles product/purchase status, product and transaction identifiers, and receipts/signatures or signed transaction information to confirm ownership and restore purchases. Neither the app nor the developer directly receives or stores card numbers, bank account numbers or Google/Apple Account passwords. This product does not remove optional rewarded ads.</p>
-<p><strong>Android:</strong> the app verifies the Google Play receipt locally and keeps a receipt copy for restoration and offline entitlement checks.</p>
-<p><strong>iOS/iPadOS:</strong> before granting access, the app checks current ownership verified by Apple StoreKit and the matching product and transaction identifiers. A copy of confirmed signed-transaction information is kept in that device's Keychain and app storage for offline checks. The Keychain item is not synchronized to other devices, and the app-storage copy alone cannot grant entitlement. Choosing Restore Purchases requests transaction synchronization with Apple and may require Apple Account authentication.</p>
+<p><strong>Android banner-removal/offline-play entitlement:</strong> the app verifies the Google Play receipt locally and keeps a receipt copy for restoration and offline entitlement checks.</p>
+<p><strong>iOS/iPadOS banner-removal/offline-play entitlement:</strong> before granting access, the app checks current ownership verified by Apple StoreKit and the matching product and transaction identifiers. A copy of confirmed signed-transaction information is kept in that device's Keychain and app storage for offline checks. The Keychain item is not synchronized to other devices, and the app-storage copy alone cannot grant entitlement. Choosing Restore Purchases requests transaction synchronization with Apple and may require Apple Account authentication.</p>
 <p>Google Play or Apple processes checkout and purchase-history queries. Separately, the installed Unity IAP SDK transmits purchase attempts/outcomes, product and transaction identifiers, available receipt content/signatures or signed transactions, error details, timestamps, app/device information and available installation/session identifiers to Unity. These support purchasing operations and purchase-service analytics. Transport is encrypted. Local entitlement verification and Keychain storage do not prevent this separate SDK transmission. Firebase purchase-event processing is described in Section 3.</p>
 <p>Purchasing is optional, but the app automatically queries existing purchases at startup and has no independent switch to disable purchase-SDK transmission. On iOS/iPadOS, explicit transaction resynchronization that may require Apple Account authentication is requested through Restore Purchases. After reinstalling, changing devices or clearing app data, you may need an internet connection and the same Google Play or Apple Account to confirm ownership again.</p>
 <p>Google, Apple and Unity process information under their respective policies, potentially outside your country. Unity's role can be a processor for the developer or an independent controller, depending on the processing. Google Play and Apple purchase records and Unity service records are separate from your local app data. See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>, <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">Unity Privacy Policy</a> and <a href="https://docs.unity.com/en-us/iap/privacy-and-consent/overview" target="_blank" rel="noopener">Unity IAP privacy overview</a>. Retention and requests are explained in Sections 5 and 7.</p>
 
+<p>The consumable infinite-mode additional-entry purchase follows the server verification and account/run binding in Section 3-4, separately from the premium entitlement above.</p>
 <h2>3-2. Connectivity checks</h2>
 <p>Unless offline entitlement is confirmed, the app checks internet access when entering the app and starting a stage through Google's HTTPS connectivity service. The service receives network information such as your IP address. The check does not attach a game save, receipt or account information.</p>
 
@@ -250,9 +280,31 @@
 <p>Availability depends on the app version and platform settings. Supported versions use Google Play Games Saved Games on Android, or Game Center and iCloud on iOS/iPadOS. When a platform account is already signed in and the service is available, the app automatically attempts connection and backup at startup. If connection is needed, Account Connection in the game settings starts the platform sign-in process. The app currently has no separate switch to disable cloud synchronization or disconnect the account. Progress is still saved locally when the platform account is unavailable; existing gameplay access conditions continue to apply.</p>
 <p>The synchronized save contains cleared-level progress, collection counts and viewed status, item quantities, roulette and pending-reward state, duplicate-reward markers, and introductory reward usage. Save timestamps and identifiers that distinguish save revisions are also transmitted. This supports backup, restoration after reinstalling, and continuation on another device using the same account on the same platform. Transfers between Android and iOS are not supported. Game Center and iCloud Drive must be available on iOS/iPadOS. Synchronization can be delayed or fail depending on connectivity and service availability.</p>
 <p>The app uses the platform-provided player identifier and profile display name to distinguish accounts and show connection status. On iOS/iPadOS, a hash derived from the player identifier is also used in the cloud save name to separate accounts' records. This remains an account-linked identifier, not anonymous data. You do not provide platform passwords or verification codes directly to the app.</p>
-<p>We do not operate a separate game-save server. Saves are sent to the relevant Google or Apple platform service. This gameplay upload excludes payment receipts and purchase entitlements, Firebase analytics records, and sound, language and haptics preferences. Platform sign-in and storage services process information for functionality and account management; the Google Play Games SDK also processes gamer identity, service-use and diagnostic information. Providers may process information on infrastructure in and outside your country under their policies and account settings. This does not stop the separate advertising, analytics or purchase-service processing.</p>
+<p>The normal-stage saves described in this section are sent to the relevant Google or Apple platform service. Infinite-mode accounts, progress and rankings are handled separately by our Firebase service under Section 3-4. This gameplay upload excludes payment receipts and purchase entitlements, Firebase analytics records, and sound, language and haptics preferences. Platform sign-in and storage services process information for functionality and account management; the Google Play Games SDK also processes gamer identity, service-use and diagnostic information. Providers may process information on infrastructure in and outside your country under their policies and account settings. This does not stop the separate advertising, analytics or purchase-service processing.</p>
 <p>See the <a href="https://developer.android.com/games/pgs/data-collection" target="_blank" rel="noopener">Google Play Games data disclosure</a>, <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a> and <a href="https://support.apple.com/guide/icloud/mm62d92d6b3e/icloud" target="_blank" rel="noopener">iCloud app-data guidance</a>.</p>
-<p>You can manage platform sign-in and app-specific iCloud use through platform settings. Signing out or disabling synchronization does not erase existing cloud saves. The app currently has no dedicated cloud-save deletion button. Platform-specific management and deletion instructions are in <a href="#data-deletion-en">Section 7</a>.</p>
+<p>You can manage platform sign-in and app-specific iCloud use through platform settings. Signing out or disabling synchronization does not erase existing cloud saves. The app has no dedicated button to delete normal-stage platform cloud saves. Platform-specific management and deletion instructions are in <a href="#data-deletion-en">Section 7</a>.</p>
+
+
+<h2 id="native-infinite-en">3-4. Native infinite-mode accounts, records, rankings and purchase verification</h2>
+<p>Android and iOS/iPadOS infinite mode connects a Firebase service account using the player identity verified by Google Play Games or Game Center. First entry and re-entry after deletion require your explicit choice. An existing account may reconnect automatically, but merely starting the app does not recreate a deleted infinite-mode account. Android and iOS identities remain separate and participate in a native-only leaderboard. These accounts and records are not linked to the Toss version or its cash-like points.</p>
+<table>
+<tr><th>Information processed</th><th>Purpose</th></tr>
+<tr><td>An account identifier derived from the verified platform player ID, a random account/session generation and nickname</td><td>Identity verification, reconnection, account separation, leaderboard display and abuse prevention</td></tr>
+<tr><td>Infinite-mode scores, runs and current progress; upgrades and internal points; daily entry counts; season rankings, rewards and duplicate-grant markers</td><td>Save progress, apply game rules and provide rankings and rewards without duplicate grants</td></tr>
+<tr><td>Product ID, transaction identifier or receipt fingerprint, purchase status/time and account/run binding</td><td>Verify additional paid entries, recover purchases and prevent reuse of a transaction</td></tr>
+<tr><td>Connection/security information and error codes, authentication replay fingerprints and short-lived IP-derived rate-limit fingerprints</td><td>Service reliability, replay prevention and request-abuse prevention</td></tr>
+</table>
+<p>Your nickname and ranked score are visible to other players on the leaderboard. Account identifiers and receipt fingerprints remain potentially linkable technical information, not a claim of complete anonymization. Platform authentication proofs and purchase tokens/signed transactions are sent over encrypted connections and verified with Google's or Apple's official services. The server does not write those raw values, passwords or security secrets to game documents or its application error logs. Device-side pending-purchase recovery data and separate Google, Apple and Unity processing are described in Section 3-1.</p>
+<p>Infinite mode offers optional rewarded-ad entry and a consumable additional-entry purchase. Each verified purchase is bound to one reserved entry for that account. Unconfirmed purchases do not grant entry, and the same purchase does not grant twice. Infinite-mode upgrade points are game currency, not cash-like Toss points.</p>
+<p>Google LLC processes this service on our behalf. Firestore game data and server functions are configured in Seoul, South Korea (<code>asia-northeast3</code>); Firebase Authentication is processed in the United States. Connection and operational data may also be processed on Google's global infrastructure. Transfers occur over TLS for infinite-mode authentication, gameplay, purchases and deletion. Google's contact and policy links appear in Section 3 and the <a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener">Firebase privacy and security information</a>. Not choosing infinite mode avoids creating a new account for this feature; existing accounts can be deleted under Section 7.</p>
+<h3>Retention and deletion</h3>
+<ul>
+<li>Infinite-mode accounts, gameplay records, nicknames and rankings are kept to provide the service until a verified account-deletion request removes them. In normal processing, active data and the Firebase user are deleted before the app receives a completion response. A request already in progress may return an accepted response and continue through hourly cleanup. Connectivity, service outages or workload can delay completion; acceptance is not described as immediate full deletion.</li>
+<li>To prevent purchase reuse after deletion, we retain only an opaque receipt fingerprint, platform, product ID and prior-grant flag for 365 days from deletion, then remove them in a subsequent cleanup. Account ID, nickname, run ID and raw transaction data are removed. This record cannot restore an entry or score.</li>
+<li>A deleted-generation marker expires two hours after deletion and is removed by subsequent hourly cleanup to block old tokens from recreating an account. Authentication replay and rate-limit fingerprints expire after ten minutes and are removed by a subsequent cleanup. Expiration and actual cleanup completion are different times.</li>
+<li>Firestore point-in-time recovery and scheduled backups are currently off, with no configured separate Firestore backup copies. Its basic version-retention period is one hour. Operational logs currently retain data for 30 days, and Google Cloud's required administrative/security audit logs for 400 days. Provider connection/security logs may exist even though the application's error logs exclude raw transactions and authentication secrets.</li>
+<li>Google retains Firebase Authentication IP logs for a few weeks. Its policy allows up to 180 days after a user-deletion request to remove authentication information from live and backup systems. This is separate from deletion of our active game profile and does not mean all provider copies disappear immediately.</li>
+</ul>
 
 <h2>4. Your choices</h2>
 <p>You can reset/delete the advertising ID or adjust personalised ads in Android Settings &gt; Google &gt; Ads (the path varies by device). This can change ad personalisation without removing all ads or all SDK processing. Uninstalling stops future transmissions by the app. Previously transmitted information is subject to the retention and request procedures below.</p>
@@ -269,7 +321,13 @@
 <p>The game is not directed at children under 14. We do not knowingly collect their personal information and will take prompt deletion action if we learn that such information has been collected.</p>
 
 <h2 id="data-deletion-en">7. Request data deletion or exercise your rights</h2>
-<p>CrumbPop, provided by Mallang Company, does not create a separate CrumbPop username/password account; supported versions use existing platform game accounts. You can contact us about access, correction, deletion or suspension of processing for game saves, Firebase statistics, purchase-related information or support messages without creating a separate account.</p>
+<h3>Delete infinite-mode data in the app</h3>
+<p>Choose <strong>Infinite-mode lobby → Delete data → Review the scope → Confirm</strong>. The service verifies a fresh proof from your current platform account. It deletes the native infinite-mode account, active run, upgrades/internal points, history, ranking, nickname and related Firebase user. It does not delete normal-stage progress, PGS/iCloud saves, banner-removal/offline-play entitlements or the Google/Apple account itself. Toss data is unaffected.</p>
+<p>A checkout or purchase awaiting verification/grant must finish first. A definitely cancelled unpaid reservation can be cleared before retrying deletion. Data deletion is not a refund request and does not restore a discarded run or record. After completion or accepted processing, the app closes the lobby and clears its infinite-mode connection data. Explicitly entering infinite mode later can create a new empty record. The minimum retained data and provider retention described in Section 3-4 still apply.</p>
+<h3>Request deletion from the web without reinstalling</h3>
+<p>You can submit a request to the email below without installing the app or creating a new account. Say that it concerns infinite mode and include the platform, nickname and approximate period of use to help locate the record. <strong>A nickname or publicly known account identifier alone is not proof of ownership and cannot authorize deletion.</strong> If further secure verification is needed, we explain the procedure and minimum necessary information. Redact unrelated data from any purchase evidence. Do not email passwords, authentication codes, purchase tokens or raw signed transactions.</p>
+
+<p>CrumbPop, provided by Mallang Company, uses existing platform game accounts without a separate username/password input. Infinite mode creates the Firebase service account described in Section 3-4. You can contact us about access, correction, deletion or suspension of processing for game saves, Firebase statistics, purchase-related information or support messages without creating a separate account.</p>
 <ol>
 <li>Email <a href="mailto:alsk1597@gmail.com">alsk1597@gmail.com</a> with the subject “CrumbPop data deletion request” and state which information you want deleted.</li>
 <li>Include the app name, platform (Android or iOS/iPadOS), device and approximate period of use. For a purchase request, you may include a Google Play order ID or Apple transaction identifier and purchase date. If additional identifiers are needed to locate installation-specific Firebase records, we will review what information can be established. The app currently has no analytics-identifier display, so we may be unable to identify a particular installation's records; we will explain the verified limitations and any available next steps.</li>
@@ -293,7 +351,7 @@
 </section>
 
 <footer>
-  최종 수정일 / Last revised: 2026-09-20 · 말랑컴퍼니 / Mallang Company
+  최종 수정일 / Last revised: 2026-10-16 · 말랑컴퍼니 / Mallang Company
 </footer>
 
 </body>
